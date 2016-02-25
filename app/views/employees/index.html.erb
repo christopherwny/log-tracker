@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Employees</h2>
+
+<div class="row"> 
+    
+  <div class="col-xs-7 col-xs-offset-2">
+   <table class="table table-bordered">
+   <% @employees.each do |employee| %>
+  <tr>
+
+        <td><%= employee.lName %></td>
+        <td><%= employee.fName %></td>
+        <td><%= mail_to employee.email %></td>
+        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+  
+</table>
+</div>
+</div> <!-- row div -->
+
+
+<br>
+<div class="row">
+<div class="col-xs-3 col-xs-offset-2">
+<%= link_to 'New Employee', new_employee_path, :class =>"btn-sm btn-info" %>
+</div>
+</div>
