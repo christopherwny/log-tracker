@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   resources :employees
   resources :people
   resources :companies
@@ -7,10 +8,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  root 'events#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  get '/aa', :to => redirect('/aa.html.erb')
+  #cn  get '/aa', :to => redirect('/aa.html.erb')
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

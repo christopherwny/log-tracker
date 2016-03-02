@@ -4,7 +4,9 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+   # @employees = Employee.all
+   #cn.. sort by lastname when you select all the employees
+    @employees = Employee.order('employees.lName DESC').all
   end
 
   # GET /employees/1

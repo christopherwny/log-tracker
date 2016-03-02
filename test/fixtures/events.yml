@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-02-29 13:53:50
+  company: MyString
+  responsibleParty: MyString
+  issuer: MyString
+  deficiency: MyText
+  affectedArea: MyText
+  eventSource: MyString
+  status: MyString
+  cost: 
+  notes: MyText
+  employee_id: 
+  company_id: 
+
+two:
+  date: 2016-02-29 13:53:50
+  company: MyString
+  responsibleParty: MyString
+  issuer: MyString
+  deficiency: MyText
+  affectedArea: MyText
+  eventSource: MyString
+  status: MyString
+  cost: 
+  notes: MyText
+  employee_id: 
+  company_id: 

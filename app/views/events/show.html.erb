@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @event.company.name %>
+</p>
+
+<p>
+  <strong>Responsibleparty:</strong>
+  <%= @event.employee.fName %> <%= @event.employee.lName %>
+</p>
+
+<p>
+  <strong>Issuer:</strong>
+  <%= @event.issuer %>
+</p>
+
+<p>
+  <strong>Deficiency:</strong>
+  <%= @event.deficiency %>
+</p>
+
+<p>
+  <strong>Affectedarea:</strong>
+  <%= @event.affectedArea %>
+</p>
+
+<p>
+  <strong>Eventsource:</strong>
+  <%= @event.eventSource %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @event.status %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @event.cost %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @event.notes %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
