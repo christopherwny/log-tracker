@@ -6,7 +6,8 @@ class EmployeesController < ApplicationController
   def index
    # @employees = Employee.all
    #cn.. sort by lastname when you select all the employees
-    @employees = Employee.order('employees.lName DESC').all
+   # @employees = Employee.order('employees.lName DESC').all
+     @employees = Employee.order(:lName).all
   end
 
   # GET /employees/1

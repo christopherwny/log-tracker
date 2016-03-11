@@ -14,4 +14,8 @@ class Event < ActiveRecord::Base
 	def self.statusSelection 
 	 ["Open", "Closed"]
 	end
+
+	def self.racSelection 
+	 ["Extra High", "High", "Medium", "Low"]
+	end
 end

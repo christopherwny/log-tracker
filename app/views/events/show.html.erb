@@ -5,12 +5,21 @@
 <h2>Event ID:  <%= @event.id %></h2>
 </div>
 <div class="row">
- <div class="col-xs-4 col-xs-offset-1">
+ <div class="col-xs-1 col-xs-offset-1">
+    <div class="field">
+       <strong>RAC:</strong>
+       <%= @event.rac %>
+
+    </div>
+  </div>
+
+  <div class="col-xs-2 col-xs-offset-">
     <div class="field">
        <strong>Date:</strong>
        <%= @event.date %>
     </div>
   </div>
+  </div> <%#end row one %>
 <p>
   <strong>Date:</strong>
   <%= @event.date %>
@@ -63,6 +72,16 @@
 <p>
   <strong>Notes:</strong>
   <%= @event.notes %>
+</p>
+
+<p>
+  <strong>refer:</strong>
+  <%= @event.refAuthority %>
+</p>
+
+<p>
+  <strong>risk:</strong>
+  <%= @event.riskCode %>
 </p>
 
 
