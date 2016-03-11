@@ -17,14 +17,14 @@
 
 
 <div class="row">
- <div class="col-xs-4 col-xs-offset-1">
+ <div class="col-xs-3 col-xs-offset-1">
     <div class="field">
        <%= f.label :date %><br>
-       <%= f.datetime_select :date %>
+       <%= f.date_select :date %>
     </div>
   </div>
 
- <div class="col-xs-3">
+ <div class="col-xs-2">
     <div class="field">
        <%=f.label :company_id, 'Company Name' %><br>
        <%=f.collection_select(:company_id, Company.all, :id, :name, prompt: true) %>
@@ -35,7 +35,15 @@
      <div class="field">
        <%= f.label :Employee, 'Responsible party' %><br>
        <%#<%= f.text_field :responsibleParty %>
-       <%=f.collection_select(:employee_id, Employee.all, :id, :lName, prompt: true) %>
+       <%=f.collection_select(:employee_id, Employee.all.order('fName, lName'), :id, :to_s , prompt: true) %>
+     </div>
+  </div>
+
+  <div class="col-xs-2">
+     <div class="field">
+       <%= f.label :issuer, 'Second responsible' %><br>
+       <%#<%= f.text_field :responsibleParty %>
+       <%=f.collection_select(:issuer, Employee.all.order('fName, lName'), :id, :to_s , prompt: true) %>
      </div>
   </div>
 
@@ -44,13 +52,22 @@
 <div class="row">&nbsp;</div> 
 
 <div class="row">
+
+
  <div class="col-xs-2 col-xs-offset-1">
     <div class="field">
-       <%= f.label :issuer %><br>
-       <%= f.text_field :issuer, :class=>"form-control" %>
+       <%= f.label :eventSource, 'Source of event' %><br>
+   <%# <%= f.text_field :eventSource %>
+    <%= f.select(:eventSource, Event.eventSourceSelection) %>
     </div>
   </div>
-  <div class="col-xs-2"></div>
+
+  <div class="col-xs-2">
+    <div class="form-group">
+       <%= f.label :status %><br>
+    <%= f.select(:eventSource, Event.statusSelection) %>
+    </div>
+  </div>
   
   
 
@@ -61,41 +78,33 @@
     </div>
   </div>
 
+  
+
   <div class="col-xs-3">
      <div class="form-group">
        <%= f.label :affectedArea, 'Affected area' %><br>
        <%= f.text_area :affectedArea, :class=>"form-control" %>
      </div>
   </div>
+  
 
 </div>  <%# end second row %>
 
 <div class="row">&nbsp;</div> 
 
 <div class="row">
- <div class="col-xs-2 col-xs-offset-1">
-    <div class="field">
-       <%= f.label :eventSource, 'Source of event' %><br>
-   <%# <%= f.text_field :eventSource %>
-    <%= f.select(:eventSource, Event.eventSourceSelection) %>
-    </div>
-  </div>
+ 
 
   <%# <div class="col-xs-2"></div> %>
   
   
   
 
- <div class="col-xs-2">
-    <div class="form-group">
-       <%= f.label :status %><br>
-    <%= f.select(:eventSource, Event.statusSelection) %>
-    </div>
-  </div>
+ 
 
 
 
-  <div class="col-xs-3">
+  <div class="col-xs-3 col-xs-offset-5">
      <div class="form-group">
        <%= f.label :cost, 'Abatement cost' %><br>
     <%= f.text_field :cost, :class=>"form-control" %>
