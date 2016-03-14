@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <div class="col-xs-3">
+  <div class="col-xs-2">
      <div class="field">
        <%= f.label :Employee, 'Responsible party' %><br>
        <%#<%= f.text_field :responsibleParty %>
@@ -56,6 +56,13 @@
        <%= f.label :issuer, 'Second responsible' %><br>
        <%#<%= f.text_field :responsibleParty %>
        <%=f.collection_select(:issuer, Employee.all.order('fName, lName'), :id, :to_s , prompt: true) %>
+     </div>
+  </div>
+
+    <div class="col-xs-2">
+     <div class="form-group">
+       <%= f.label :refAuthority, 'Reference Authority' %><br>
+    <%= f.text_field :refAuthority, :class=>"form-control" %>
      </div>
   </div>
 
@@ -100,10 +107,13 @@
 
   <div class="col-xs-2">
      <div class="form-group">
-       <%= f.label :cost, 'Abatement cost' %><br>
-    <%= f.text_field :cost, :class=>"form-control" %>
+       <%= f.label :affectedArea, 'Affected area' %><br>
+       <%= f.text_field :affectedArea, :class=>"form-control" %>
      </div>
   </div>
+
+
+
 
 
   
@@ -121,40 +131,42 @@
   
 
  
-<div class="col-xs-3 col-xs-offset-3">
-     <div class="form-group">
-       <%= f.label :affectedArea, 'Affected area' %><br>
-       <%= f.text_area :affectedArea, :class=>"form-control" %>
-     </div>
-  </div>
 
 
-  <div class="col-xs-2">
-     <div class="form-group">
-       <%= f.label :refAuthority, 'Reference Authority' %><br>
-    <%= f.text_field :refAuthority, :class=>"form-control" %>
-     </div>
-  </div>
 
-<div class="col-xs-3">
+
+<div class="col-xs-3 col-xs-offset-1">
    <div class="form-group">
     <%= f.label :targetDate, 'Target completion date' %><br>
-           <%= f.date_select :date %>
+           <%= f.date_select :targetDate %>
   </div>
  </div>
 
-</div>  <%# end third row %>
 
-<div class="row">
-<div class="col-xs-3 col-xs-offset-6">
+
+
+<div class="col-xs-3">
    <div class="form-group">
     <%= f.label :notes %><br>
     <%= f.text_area :notes, :class=>"form-control" %>
   </div>
  </div>
 
- </div> <%# end fourth row %>
-  
+   <div class="col-xs-2">
+     <div class="form-group">
+       <%= f.label :cost, 'Abatement cost' %><br>
+    <%= f.text_field :cost, :class=>"form-control" %>
+     </div>
+  </div>
+
+  <div class="col-xs-3">
+   <div class="form-group">
+    <%= f.label :closedDate, 'Actual completion date' %><br>
+           <%= f.date_select :closedDate %>
+  </div>
+ </div>
+
+ </div>  <%# end third row %>
   
 <br/><br/>
  <div class="row">

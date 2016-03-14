@@ -7,7 +7,8 @@ class EmployeesController < ApplicationController
    # @employees = Employee.all
    #cn.. sort by lastname when you select all the employees
    # @employees = Employee.order('employees.lName DESC').all
-     @employees = Employee.order(:lName).all
+     @employees = Employee.all.order('lName asc')
+    # @employees = Employee.all(:order => 'lName')
   end
 
   # GET /employees/1

@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 	belongs_to :company
 	belongs_to :employee
 
-	validates_presence_of :company_id, :employee_id, :issuer
+	validates_presence_of :company_id, :employee_id, :issuer, :rac
 
 	def self.eventSourceSelection 
 	 ["Accident","Audit Int.", "Audit Ext", "Equipment Failure", "FLDEQ", "Fire Inspection", "Injury", 
