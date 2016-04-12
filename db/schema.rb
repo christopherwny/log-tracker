@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311180117) do
+ActiveRecord::Schema.define(version: 20160316130711) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160311180117) do
     t.string   "refAuthority"
     t.date     "closedDate"
     t.string   "riskCode"
+    t.string   "eventDescription"
   end
 
   create_table "people", force: :cascade do |t|
